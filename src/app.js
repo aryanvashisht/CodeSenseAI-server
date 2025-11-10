@@ -8,7 +8,7 @@ const app = express(); // creates server does not start it.
 
 app.use(express.json());
 
-app.options("*", cors({
+app.options("/*", cors({
   origin: "http://localhost:5173",
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
