@@ -8,13 +8,14 @@ const app = express(); // creates server does not start it.
 
 app.use(express.json());
 
-app.use(cors({
+app.options("*", cors({
   origin: "http://localhost:5173",
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
   maxAge: 86400
 }));
+
 
 
 app.use("/api/v1/ai",aiRoutes);
