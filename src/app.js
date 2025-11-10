@@ -15,6 +15,13 @@ app.use(cors({
   credentials: true, 
 }));
 
+app.options('*', cors({
+  origin: 'http://localhost:5173',
+  credentials: true,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use("/api/v1/ai",aiRoutes);
 
 app.get("/fine",(req,res)=>{
