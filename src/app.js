@@ -19,4 +19,4 @@ app.get("/fine",(req,res)=>{
 })
 // app.use("api/v1/user/",aiRoutes);
 
-export { app };
+export default app;
